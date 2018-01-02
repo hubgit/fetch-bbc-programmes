@@ -1,0 +1,17 @@
+{
+  "name": "fetch-bbc-programmes",
+  "version": "0.0.1",
+  "private": true,
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "event-stream": "^3.3.4",
+    "fetch-resource": "^0.3.2",
+    "ndjson": "^1.5.0",
+    "rest-collection-stream": "^0.0.1"
+  },
+  "scripts": {
+    "run": "node src/fetch-episodes.js"
+  }
+}
