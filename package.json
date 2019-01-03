@@ -6,12 +6,15 @@
     "src"
   ],
   "dependencies": {
-    "event-stream": "^3.3.4",
-    "fetch-resource": "^0.3.2",
+    "event-stream": "^4.0.1",
+    "fetch-resource": "^0.3.4",
     "ndjson": "^1.5.0",
     "rest-collection-stream": "^0.0.1"
   },
   "scripts": {
-    "run": "node src/fetch-episodes.js"
+    "fetch": "node src/fetch-episodes.js"
+  },
+  "resolutions": {
+    "event-stream": "^4.0.1"
   }
 }
