@@ -1,5 +1,5 @@
-const { episodes, formats } = require('./api')
+const { episodes, genres } = require('./api')
 
-formats().then(data => {
-  data.categories.forEach(category => episodes(category.key))
+genres().then(data => {
+  data.categories.filter(category => category.narrower).forEach(category => episodes(category.key))
 })
