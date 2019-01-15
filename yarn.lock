@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-axios-collection@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/axios-collection/-/axios-collection-1.0.0.tgz#5b415f9061807a765985aacafefa0d44f7c56160"
-  integrity sha512-hGrNG2jvVeNea9fZBnz8ksoZaM3ZIwg4aO7L/lIWOpiW5n9ZoiIOOz/JfwR3P5jzBGl8izGuCF1XP/0LgOzH7g==
+axios-collection@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/axios-collection/-/axios-collection-2.0.0.tgz#6bccf562c198dbb7e40d62f84a5148c5723be227"
+  integrity sha512-jrUT0xPZr8TcfsiEZv+nRyNFCe38Ede5nQPeZzRGGS0vrRVFA6IysGm30vnDl4gveRZ3zlAyI/zDBTZofcpTXg==
   dependencies:
     parse-link-header "^1.0.1"
 
@@ -15,6 +15,13 @@ axios-debug-log@^0.4.0:
   integrity sha512-i7WAvhMajEoqG0GaLefAegSlBkzljtg9PC+sNu9lygtF4Wg/UgY4Ou3kOUI4L7Tm2RlVQmYI+3EVrWAKoJFohg==
   dependencies:
     debug "^3.0.0"
+
+axios-retry@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.npmjs.org/axios-retry/-/axios-retry-3.1.1.tgz#88d2971f671a9023b21d887c5dcac6c54f332cde"
+  integrity sha512-BeNOxa/CBQQLa9gVuMta1oWIhbL6UETKBfAmFjOXwiBxgcmrDBVVwz/gKZTpzKJlVjmi5DeYC+lP5Ng7ssc1pg==
+  dependencies:
+    is-retry-allowed "^1.1.0"
 
 axios@^0.18.0:
   version "0.18.0"
@@ -49,6 +56,11 @@ is-buffer@^1.1.5:
   version "1.1.6"
   resolved "https://registry.npmjs.org/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
   integrity sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==
+
+is-retry-allowed@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/is-retry-allowed/-/is-retry-allowed-1.1.0.tgz#11a060568b67339444033d0125a61a20d564fb34"
+  integrity sha1-EaBgVotnM5REAz0BJaYaINVk+zQ=
 
 ms@2.0.0:
   version "2.0.0"

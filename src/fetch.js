@@ -1,14 +1,29 @@
 require('axios-debug-log')
+const axios = require('axios')
+const axiosCollection = require('axios-collection')
+const axiosRetry = require('axios-retry')
 const fs = require('fs')
-const collection = require('axios-collection')
+const http = require('http')
 
-// TODO: use axios retry and rate-limiting interceptors
+const client = axios.create({
+  // baseURL: 'https://www.bbc.co.uk/',
+  baseURL: 'http://clifton.api.bbci.co.uk/aps/',
+  httpAgent: new http.Agent({ keepAlive: true })
+})
 
-const buildURL = (path, page) => `http://clifton.api.bbci.co.uk/aps/${path}.json?page=${page || 1}`
-// `https://www.bbc.co.uk/${path}.json?page=${page || 1}`
+axiosRetry(client, {
+  retries: 3,
+  retryDelay: axiosRetry.exponentialDelay
+})
+
+const collection = axiosCollection(client)
+
+// TODO: use axios rate-limiting interceptor
+
+const buildURL = (path, page) => `${path}.json?page=${page || 1}`
 
 const episodes = async genre => {
-  const output = fs.createWriteStream(__dirname + `/../data/genres/${genre}.ndjson`)
+  const output = fs.createWriteStream(__dirname + `/../data/test/${genre}.ndjson`)
 
   const url = buildURL(`programmes/genres/${genre}/player/episodes`)
 
@@ -20,7 +35,7 @@ const episodes = async genre => {
       if (offset + episodes.length >= total) return null
 
       return buildURL(`programmes/genres/${genre}/player/episodes`, page + 1)
-    }
+    },
   })
 
   for await (const item of items) {
