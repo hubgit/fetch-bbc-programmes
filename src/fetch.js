@@ -15,7 +15,7 @@ const episodes = async genre => {
   const items = collection(url, {
     parse: response => response.data.episodes,
     next: response => {
-      const { data: { offset, episodes, total, page } } = response
+      const { offset, episodes, total, page } = response.data
 
       if (offset + episodes.length >= total) return null
 
