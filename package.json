@@ -6,15 +6,11 @@
     "src"
   ],
   "dependencies": {
-    "event-stream": "3.3.4",
-    "fetch-resource": "^0.3.4",
-    "ndjson": "^1.5.0",
-    "rest-collection-stream": "^0.0.1"
+    "axios": "^0.18.0",
+    "axios-collection": "^1.0.0",
+    "axios-debug-log": "^0.4.0"
   },
   "scripts": {
-    "fetch": "node src/fetch-episodes.js"
-  },
-  "resolutions": {
-    "event-stream": "^4.0.1"
+    "fetch": "node src/fetch.js"
   }
 }
